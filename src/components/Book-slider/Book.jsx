@@ -1,6 +1,6 @@
-import {  useState, useEffect } from 'react'
+import {  useState} from 'react'
 import './Book.css'
-import React from 'react'
+import Rating from './Rating';
 
 
 function Book({data}) {
@@ -25,7 +25,7 @@ function Handleslide(direction) {
     <i onClick={()=> Handleslide ("left")} className="bi bi-chevron-left Book-slider-arrow-left"></i>
 
     <div  style={{
-    transform: `translateX(${slideIndexx * -245}px)`
+    transform: `translateX(${slideIndexx * -300}px)`
 
   }} className="Book-slider-wrapper">
     {data.map((item)=>(
@@ -35,7 +35,9 @@ function Handleslide(direction) {
                 {item.title}
             </h3> 
             <div className='Rating'> 
-                Rating
+               <Rating rating={item.rating}  reviews={item.reviews}/>
+
+
             </div>
             <div className="Book-slide-item-price">
                 ${item.price}
