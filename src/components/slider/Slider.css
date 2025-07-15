@@ -38,7 +38,7 @@ height: calc(100vh - 250px);
  ;
 }
 .slide-info-desc{
-    margin-right: 21px 0;
+    margin-right: 21px;
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 3px;
@@ -88,9 +88,8 @@ background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 23
         font-size: 17px;
     }
 }
-@media(max-width:720px){
-    .slide,.arrow-left,.arrow-right{
+@media (max-width: 720px) {
+    .slider-container {
         display: none;
     }
-    
 }
