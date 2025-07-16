@@ -27,6 +27,20 @@ z-index: 2;
 font-size: 32px;
 
 }
+
+.hh{
+    cursor: pointer;
+
+}
+.hhh{
+    cursor: pointer;
+}
+.hhh:hover{
+  color: var(--primary-color);  
+}
+.hh:hover{
+    color: red;
+}
 .Book-slider-arrow-left{
     left: 10px;
 }

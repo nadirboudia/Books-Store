@@ -1,5 +1,5 @@
 import './Book.css';
-
+import "../Modal/Modal.css"
 function Rating({rating , reviews}) {
   return (
     <div className="contain">
