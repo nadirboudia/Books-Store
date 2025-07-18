@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom'
 import {books} from '../../data/books'
 import Rating from '../../components/Book-slider/Rating';
 import './Bookk.css'
+import {Link} from 'react-router-dom';
 
 function Bookk() {
   const{id} = useParams();
   
   const book = books.find(b => b.id === parseInt(id));
-  console.log(book)
 
   return (
     <div className='book'>
@@ -27,7 +27,7 @@ function Bookk() {
 
             <div className="book-add-to-cart">
           <input type="number" min={1} max={100}  className='book-add-to-cart-input' />
-          <button className='book-add-to-cart-btn'><i className="bi bi-cart-plus"> Add to Cart</i></button>
+          <Link to={`/cart/${book.id}`}  className='book-add-to-cart-btn'><i className="bi bi-cart-plus"> Add to Cart</i></Link>
         </div>
         </div>
       
@@ -41,12 +41,12 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi accusamus ill
           <div className="book-content-1">
           <p>Print Length</p>
           <i className='bi bi-file-earmark-text'></i>
-          <b>410Pages</b>
+          <b>{book.printLength} Pages</b>
           </div>
           <div className="book-content-2">
              <p>Language</p>
           <i className='bi bi-globe'></i>
-          <b>English</b>
+          <b>{book.language}</b>
           </div>
           <div className="book-content-3">
              <p>Pubication Date</p>
