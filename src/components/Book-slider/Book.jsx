@@ -66,6 +66,7 @@ function Book({ data }) {
       ></i>
           {openmodal && <Modal openmodal={openmodal} setOpenmodal={setOpenmodal} Bookinfo={bookinfo} />}
     </div>
+    
   );
 }
 
