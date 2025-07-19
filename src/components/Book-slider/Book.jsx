@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./Book.css";
 import Rating from "./Rating";
 import Modal from "../Modal/Modal"
+import { useContext } from "react";
+import Cartcontext from "../../Context/Cardcontextu";
 function Book({ data }) {
   const [slideIndexx, setSlideIndexx] = useState(0);
   const [openmodal, setOpenmodal] = useState(false);
   const [bookinfo, setBookinfo] = useState(null);
 
   // handle modal 
+    const {AddTocart} = useContext(Cartcontext);
   
   function Handlemodal(book){
     setOpenmodal(true)
@@ -52,7 +55,9 @@ function Book({ data }) {
               <i onClick={()=>{
                 Handlemodal(item)
               }}  className="bi bi-eye-fill hh"></i>
-              <i className="bi bi-cart-fill hhh"></i>
+              <i onClick={()=>{
+                AddTocart({...item , quantity : 1})
+              }} className="bi bi-cart-fill hhh"></i>
             </div>
 
         

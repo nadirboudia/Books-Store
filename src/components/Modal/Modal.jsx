@@ -1,11 +1,16 @@
 import "./Modal.css";
 import Rating from "../Book-slider/Rating";
 import {Link} from "react-router-dom"
-
+import { useContext, useState } from "react";
+import Cartcontext from "../../Context/Cardcontextu";
 function Modal({ setOpenmodal, Bookinfo }) {
 
- 
+     
   const { image, title, inStock, rating, reviews, author, price } = Bookinfo;
+
+  const {AddTocart} = useContext(Cartcontext);
+  const [quantity , setQuantity] = useState(1)
+
   return (
     <div className="modal-container">
       <div className="modal-content">
@@ -36,8 +41,12 @@ function Modal({ setOpenmodal, Bookinfo }) {
             <b>Price : </b> <b className="pric">${price}</b>
           </div>
             <div className="modal-add-to-cart">
-              <input type="number" min="1" max="100" className="modal-add-to-cart-input"/>
-              <button className="modal-add-to-cart-btn"> <i className="bi bi-cart-plus"></i> Add To Cart</button>
+              <input type="number" min="1" max="100" className="modal-add-to-cart-input" value={quantity} onChange={(e)=>{
+                setQuantity(e.target.value);
+              }}/>
+              <button onClick={(bookinfo)=>{
+                AddTocart({...bookinfo , quantity : quantity})
+              }} className="modal-add-to-cart-btn"> <i className="bi bi-cart-plus"></i> Add To Cart</button>
             </div>
 
              <Link  to={`/book/${Bookinfo.id}`} className="modal-content-info-link">

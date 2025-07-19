@@ -3,11 +3,15 @@ import { useParams } from 'react-router-dom'
 import {books} from '../../data/books'
 import Rating from '../../components/Book-slider/Rating';
 import './Bookk.css'
-import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import Cartcontext from '../../Context/Cardcontextu';
+import { useState } from 'react';
 
 function Bookk() {
   const{id} = useParams();
-  
+  const { AddTocart} = useContext(Cartcontext);
+  const [qty , setQty] = useState(1);
+
   const book = books.find(b => b.id === parseInt(id));
 
   return (
@@ -26,8 +30,12 @@ function Bookk() {
          </div>
 
             <div className="book-add-to-cart">
-          <input type="number" min={1} max={100}  className='book-add-to-cart-input' />
-          <Link to={`/cart/${book.id}`}  className='book-add-to-cart-btn'><i className="bi bi-cart-plus"> Add to Cart</i></Link>
+          <input type="number" min={1} max={100}  className='book-add-to-cart-input' value={qty} onChange={(e)=>{
+            setQty(e.target.value)
+          }} />
+          <button onClick={() => {
+            AddTocart({...book ,quantity:qty})
+          }} to={`/cart/${book.id}`}  className='book-add-to-cart-btn'><i className="bi bi-cart-plus"> Add to Cart</i></button>
         </div>
         </div>
       

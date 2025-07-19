@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import "./Header.css";
 import {Link} from "react-router-dom"
+import Cartcontext from "../../Context/Cardcontextu";
 
 function Headermiddle() {
+  const {cartitemlength } = useContext(Cartcontext);
   return (
     <div className="header-middle">
       <Link to='/' className="header-middle-logo">
@@ -18,6 +21,7 @@ function Headermiddle() {
 
       <Link to='/cart' className="header-middle-cart-wrapper">
         <i className="bi bi-cart2"></i>
+          <b className="cart-notification"> {cartitemlength }</b>
       </Link>
     </div>
   );

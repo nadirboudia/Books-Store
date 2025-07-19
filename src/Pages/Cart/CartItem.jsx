@@ -1,4 +1,7 @@
-function CartItem({ cart }) {
+
+function CartItem({ cart ,setCartitem , RemoveFromcart , AddTocart}) {
+
+ 
   return (
     <div className="cart-content-info">
       <div className="cart-content-first">
@@ -21,14 +24,14 @@ function CartItem({ cart }) {
 
       <div className="cart-content-third">
         <div className="buttons">
-          <button>+</button>
+          <button  onClick={()=> AddTocart({...cart , quantity :cart.quantity + 1})} >+</button>
           <h2 style={{ fontWeight: "500" }}>{cart.quantity}</h2>
-          <button>-</button>
+          <button onClick={()=> AddTocart({...cart , quantity : cart.quantity -1 })}>-</button>
         </div>
         <div className="price">${(cart.price * cart.quantity).toFixed(2)}</div>
       </div>
 
-      <i className="bi bi-trash trash-icon"></i>
+      <i onClick={()=>RemoveFromcart(cart.id)} className="bi bi-trash trash-icon"></i>
     </div>
   );
 }

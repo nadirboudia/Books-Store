@@ -1,34 +1,37 @@
 import { useState } from "react";
-import Cartcontext from "./Cardcontextu"
+import Cartcontext from "./Cardcontextu";
 
-    
-    function CartProvider ({children}) {
+function CartProvider({ children }) {
+  const [cartitem, setcartItem] = useState([]);
 
-        const [cartitems , setcartItems]= useState([]);
+  // add to cart
 
-        // add to cart
+  function AddTocart(item) {
+  const isExist = cartitem.find(i => i.id === item.id );
 
-         function AddTocart(item){
-            setcartItems(prev => [...prev , item])
-         };
+  if(isExist){
+    setcartItem(
+      cartitem.map((i) => i.id === item.id ? item : i)
 
-        //  remove from cart 
+    )
+  }else{
+    setcartItem((prev) => [...prev , item ])
+  }
+   
+  }
+ 
+  //  remove from cart
 
-        function RemoveFromcart(id){
-        const cart = cartitems.filter(c => c.id !== id );
-        setcartItems(cart)
-        }
+  function RemoveFromcart(id) {
+    const cart = cartitem.filter((c) => c.id !== id);
+    setcartItem(cart);
+  }
 
+  return (
+    <Cartcontext.Provider value={{ RemoveFromcart, AddTocart, cartitem, cartitemlength : cartitem.length }}>
+      {children}
+    </Cartcontext.Provider>
+  );
+}
 
-
-
-
-      return (
-       <Cartcontext.Provider>
-        {children}
-       </Cartcontext.Provider>
-      )
-    }
-    
-    export default CartProvider;
-    
+export default CartProvider;

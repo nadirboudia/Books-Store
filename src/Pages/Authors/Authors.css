@@ -1,0 +1,61 @@
+.Authors{
+
+    margin-top: 6.5%;
+    height: 100%;
+    padding: 4%;
+}
+.authors-search-box{
+    width: 100%;
+    height: 7%;
+  margin-bottom: 4%;    
+}
+.authors-search-input{
+    width: 100%;
+    height: 50px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray ;
+    font-size: larger;
+    padding: 10px;
+}
+
+.authors-content-images{
+    padding: 4%;
+
+}
+.images-wrapp{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+.image{
+    width: 30%;
+    height: 400px;
+    background-color: snow;
+    border: 1px solid black;
+    margin: 10px 10px;
+    padding: 15px;
+}
+.img{
+    width: 100%;
+    height: 80%;
+}
+.img img{
+    width:100%;
+    height: 100%;
+    border-radius: 7px;
+}
+.title{
+
+    height: 20%;
+    padding-top: 15px;
+    text-align: center;
+}
+.title h2{
+    font-weight: 500;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

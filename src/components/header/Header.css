@@ -74,7 +74,23 @@
   right: 3%;
   top: 14%;
 }
+.header-middle-cart-wrapper {
+  position: relative;
+}
+.cart-notification{
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 .header-middle-cart-wrapper i {
   font-size: 35px;
   color: white;
