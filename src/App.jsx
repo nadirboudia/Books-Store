@@ -10,10 +10,14 @@ import Bookk from "./Pages/Book/Bookk"
 import Contact from './Pages/Contact/Contact';
 import Cart from './Pages/Cart/Cart'
 import Register from "./Pages/Forms/Register";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div>
+      <ToastContainer />
+         
       <BrowserRouter>
         <Header />
 
@@ -27,7 +31,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/register" element={<Register />} />
-         
+           
         </Routes>
         <Footer />
       </BrowserRouter>
