@@ -31,6 +31,7 @@
   font-size: 22px;
   font-weight: 500;
   color: var(--main-color);
+  text-decoration: none;
 }
 
 .header-top-link i,
@@ -52,7 +53,8 @@
   font-size: 24px;
   font-weight: 600;
   color: var(--main-color);
- position: relative;    
+ position: relative;  
+ text-decoration: none;  
 
 }
 
@@ -114,6 +116,7 @@
   justify-content: center;
   gap: 10px;
   padding: 10px;
+  
 }
 .navbar-link{
    gap: 30px;
@@ -122,7 +125,7 @@
    color:#525452;
    font-weight: 500;
    cursor: pointer;
-   
+   text-decoration: none;
 
 }
 .navbar-link:hover{

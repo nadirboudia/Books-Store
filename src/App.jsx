@@ -12,6 +12,7 @@ import Cart from './Pages/Cart/Cart'
 import Register from "./Pages/Forms/Register";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Scrol from "./Pages/Scrol/Scrol";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <ToastContainer />
          
       <BrowserRouter>
+      <Scrol/>
         <Header />
 
 

@@ -1,6 +1,6 @@
 import "./Footer.css";
 import FooterIcons from "./FooterIcons";
-
+import {Link} from "react-router-dom"
 function Footer() {
   return (
     
@@ -14,11 +14,11 @@ function Footer() {
       <div className="footer-item">
         <h3 className="footer-item-title"> Useful Links </h3>
         <ul className="footer-item-list">
-          <li className="footer-item-link">Home</li>
-          <li className="footer-item-link"> Authors</li>
-          <li className="footer-item-link">About Us </li>
-          <li className="footer-item-link">Contact Us</li>
-          <li className="footer-item-link">Register</li>
+          <Link to='/' className="footer-item-link">Home</Link>
+          <Link to='/authors' className="footer-item-link"> Authors</Link>
+          <Link to='/about' className="footer-item-link">About Us </Link>
+          <Link to='/contact' className="footer-item-link">Contact Us</Link>
+          <Link to='/register' className="footer-item-link">Register</Link>
         </ul>
       </div>
 
