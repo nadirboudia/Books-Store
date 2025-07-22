@@ -24,7 +24,7 @@ function CartItem({ cart ,setCartitem , RemoveFromcart , AddTocart}) {
 
       <div className="cart-content-third">
         <div className="buttons">
-          <button  onClick={()=> AddTocart({...cart , quantity :cart.quantity + 1})} >+</button>
+          <button  onClick={()=> AddTocart({...cart ,...cart.quantity ,  quantity : cart.quantity + 1})} >+</button>
           <h2 style={{ fontWeight: "500" }}>{cart.quantity}</h2>
           <button onClick={()=> AddTocart({...cart , quantity: cart.quantity <= 1 ? 1 : cart.quantity - 1 })}  >-</button>
         </div>

@@ -13,15 +13,13 @@ function Register() {
     if (password.trim() === "") return toast.error("Password Vide");
     if(password.trim() !== confirmpass.trim()) return  toast.error("confirmation wrong ! ");
 
-     const savedUser = JSON.parse(localStorage.getItem("user"));
-    if (savedUser && savedUser.email === email && savedUser.passord === password) {
-      return toast.error("Vous avez déjà un compte !");
+    const savedUser = JSON.parse(localStorage.getItem("user"));
+    if (savedUser && savedUser.email === email) {
+      return toast.error("Vous avez déjà un compte avec cette email !");
+    }else{
+      localStorage.setItem("user" , JSON.stringify({email :email , password: password}))
+      toast.success("Votre compte a été créé avec succès !");
     }
-
-    localStorage.setItem("user", JSON.stringify({ email, password }));
-    toast.success("Votre compte a été créé avec succès !");
-    
- 
     setEmail("");
     setPassword("");
     setConfirmpass("");
@@ -63,7 +61,7 @@ function Register() {
             disabled={!(password.length >= 8 ) || !email.includes("@")}
             className="bnt"
           >
-            Login
+            Register Now 
           </button>
           <b>
             Already Have an Account ? <Link to="/login"> Login</Link>

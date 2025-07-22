@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Login() {
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
+  const [showpassword , setShowpassword] = useState(false)
   function Handleevent(e) {
     e.preventDefault();
     if (mail.trim() === "") return toast.error("Adresse Vide ! ");
@@ -13,7 +14,7 @@ function Login() {
     
     const savedUser = JSON.parse(localStorage.getItem("user"));
 
-    if (!savedUser || savedUser.email !== mail &&  savedUser.password !== pass) {
+    if (!savedUser || savedUser.email !== mail ||  savedUser.password !== pass) {
       return toast.error("Account doesn't exist !");
     }
   
@@ -22,6 +23,12 @@ function Login() {
 
     setMail("");
     setPass("");
+  }
+
+
+  // show password
+  function Showpasshandler (){
+    setShowpassword(prev => !prev )
   }
   return (
     <form onSubmit={Handleevent} className="login">
@@ -37,13 +44,16 @@ function Login() {
         />
 
         <input
-          type="password"
+          type={showpassword ? "text"  : "password"}
           value={pass}
           onChange={(e) => setPass(e.target.value)}
           className="login-input2"
           placeholder="Enter Your Password *"
         />
 
+        {showpassword ? (  <i onClick={Showpasshandler} className="bi bi-eye-fill show-pass-icon"></i>) : (  <i onClick={Showpasshandler} className="bi bi-eye-slash-fill show-pass-icon"></i>) }
+       
+       
         <div className="login-button">
           <button
             disabled={!(pass.length >= 8) || !mail.includes("@")}
