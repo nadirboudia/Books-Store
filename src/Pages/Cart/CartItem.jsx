@@ -26,7 +26,7 @@ function CartItem({ cart ,setCartitem , RemoveFromcart , AddTocart}) {
         <div className="buttons">
           <button  onClick={()=> AddTocart({...cart , quantity :cart.quantity + 1})} >+</button>
           <h2 style={{ fontWeight: "500" }}>{cart.quantity}</h2>
-          <button onClick={()=> AddTocart({...cart , quantity : cart.quantity -1 })}>-</button>
+          <button onClick={()=> AddTocart({...cart , quantity: cart.quantity <= 1 ? 1 : cart.quantity - 1 })}  >-</button>
         </div>
         <div className="price">${(cart.price * cart.quantity).toFixed(2)}</div>
       </div>

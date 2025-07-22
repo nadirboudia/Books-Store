@@ -1,4 +1,6 @@
 import "./Header.css";
+import {Link} from 'react-router-dom';
+
 function Headertop({setToggle , toggle}) {
   return (
     <div className="header-top">
@@ -11,10 +13,10 @@ function Headertop({setToggle , toggle}) {
         <i className="bi bi-telephone-fill"></i> 123-279-278
       </div>
       <div className="header-top-text">Welcome to online Book store</div>
-      <div className="header-top-link">
+      <Link to='/login' className="header-top-link">
         <i className="bi bi-person-fill"></i>
-        Login
-      </div>
+     Login
+      </Link>
     </div>
   );
 }

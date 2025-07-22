@@ -1,3 +1,17 @@
 .co{
     margin-top: 10%;
+    padding: 40px;
+    height: calc(100vh - 250px);
+    margin-left: 4%;
+}
+.co h1{
+    font-size: 40px;
+    width: max-content;
+    border-bottom: 2px solid gray;
+    margin:20px 0;
+    color: gray;
+}
+.co p{
+    font-size: 20px;
+    margin-bottom: 10px;
 }
